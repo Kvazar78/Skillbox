@@ -4,9 +4,12 @@
 # Вводится число N, далее еще N − 1 чисел: номера оставшихся карточек
 # (различные числа от 1 до N). Программа должна вывести номер потерянной карточки.
 value = int(input('Введи количество карточек: '))
-for i in range(1, value + 1):
+summ_totalCards = 0
+summ = 0
+for card in range(0, value +1):
+    summ_totalCards += card
+for i in range(1, value):
     num_cards = int(input('Введи номер карточки: '))
-    if num_cards != i:
-        print(f'Нет карточки с номером {i}')
-        break
+    summ += num_cards
+print(f'Нет карточки с номером {summ_totalCards - summ}')
 

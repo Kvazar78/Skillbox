@@ -18,7 +18,7 @@ def good_password_generator(length=10):
 popular_passwords = """password
 123456
 12345678
-1234
+1234ефы
 qwerty
 12345
 dragon
