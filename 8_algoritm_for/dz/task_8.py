@@ -23,3 +23,8 @@
 startSegment = int(input('Введи начало отрезка: '))
 endSegment = int(input('Введи конец отрезка: '))
 step = int(input('Введи шаг: '))
+if startSegment < endSegment:
+    startSegment, endSegment = endSegment, startSegment
+for num in range(startSegment, endSegment - 1, step):
+    y = (num ** 3) + (2 * num ** 2) - (4 * num - 1)
+    print(f'В точке {num} функция равна {y}')
