@@ -5,10 +5,15 @@
 # Пользователь вводит 10 чисел. Напишите программу, которая проверяет,
 # упорядочены ли они по возрастанию.
 zp_month = 0
+zp_down = False
 for month in range(10):
     zp = int(input(f'Введите сумму за {month + 1} месяц: '))
-    if zp > zp_month:
-        print('Зарплата растет!')
+    if zp >= zp_month:
+        zp_month = zp
     else:
-        print('Зарплата падает!')
-    zp_month = zp
+        zp_down = True
+        break
+if zp_down:
+    print('Зарплата упала!')
+else:
+    print('Зарплата растет!')
