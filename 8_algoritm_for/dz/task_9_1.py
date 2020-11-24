@@ -4,10 +4,12 @@
 a = int(input('Введите длину стороны листа письма: '))
 a_convert = 12
 count = 0
-while True:
-    if a_convert ** 2 < a ** 2:
-        count += 2
-        a /= 2
-    else:
+
+for n in range(a_convert, a, -12):
+    if a_convert >= a:
         break
+    else:
+        a /= 2
+        count += 2
+
 print(f'Лист нужно сложить {count} раз')
