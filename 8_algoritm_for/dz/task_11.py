@@ -1,8 +1,8 @@
 # Дано натуральное число N. Напишите программу для вычисления
 # следующей суммы ряда (начиная с единицы)
 degree = int(input('Введи степень: '))
-summ = 0
-for n in range(degree +1):
-    s = (-1 ** n) * (1 / 2 ** n)
+summ = 1
+for n in range(1, degree +1):
+    s = ((-1) ** n) * (1 / 2 ** n)
     summ += s
 print(summ)

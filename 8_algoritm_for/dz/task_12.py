@@ -3,9 +3,10 @@
 x = int(input('Введи число Х: '))
 result_a = 1
 result_b = 1
-a= 0
+a = 0
 for n in range(0, 6):
     a += 2 ** n
+    print(a)
     result_a *= (x - a)
 for n in range(1, 7):
     result_b *= (x - 2 ** n)

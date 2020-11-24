@@ -30,14 +30,33 @@
 # Ответ: Нет решения
 boys = int(input('Введите кол-во мальчиков: '))
 girls = int(input('Введите кол-во девочек: '))
-count_B = boys
-count_G = girls
 string = ''
+
 if boys / girls > 2 or girls / boys > 2:
-    print('Ответ: Нет решения')
+    string = 'Нет решения'
 elif boys == girls:
-    for i in range(1, boys + girls + 1, 2):
-        string += 'B'
-        string += 'G'
-    print(string)
-# if (boys % 2 == 0 and girls % 2 == 1) or (boys % 2 == 1 and girls % 2 == 0):
+    for i in range(1, boys +1):
+        string += 'BG'
+    print(f'Ответ: {string}')
+elif boys > girls:
+    for i in range(1, boys + 1):
+        if boys == girls:
+            string += 'BG'
+            break
+        string += 'BGB'
+        boys -= 2
+        girls -= 1
+        if boys == 0 and girls == 0:
+            break
+else:
+    for i in range(1, girls + 1):
+        if girls == boys:
+            string += 'GB'
+            break
+        string += 'GBG'
+        girls -= 2
+        boys -= 1
+        if girls == 0 and boys == 0:
+            break
+
+print(f'Ответ: {string}')
