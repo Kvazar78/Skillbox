@@ -34,29 +34,21 @@ string = ''
 
 if boys / girls > 2 or girls / boys > 2:
     string = 'Нет решения'
-elif boys == girls:
+else:
+    if boys > girls:
+        for i in range(1, boys + 1):
+            if boys == girls:
+                break
+            string += 'BGB'
+            boys -= 2
+            girls -= 1
+    else:
+        for i in range(1, girls + 1):
+            if girls == boys:
+                break
+            string += 'GBG'
+            girls -= 2
+            boys -= 1
     for i in range(1, boys +1):
         string += 'BG'
-    print(f'Ответ: {string}')
-elif boys > girls:
-    for i in range(1, boys + 1):
-        if boys == girls:
-            string += 'BG'
-            break
-        string += 'BGB'
-        boys -= 2
-        girls -= 1
-        if boys == 0 and girls == 0:
-            break
-else:
-    for i in range(1, girls + 1):
-        if girls == boys:
-            string += 'GB'
-            break
-        string += 'GBG'
-        girls -= 2
-        boys -= 1
-        if girls == 0 and boys == 0:
-            break
-
 print(f'Ответ: {string}')
