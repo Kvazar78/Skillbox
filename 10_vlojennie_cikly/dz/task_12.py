@@ -11,13 +11,16 @@ for i in name:
 
 for row in range(3):
     for col in range(countSym + 4):
-        if col == 0 or col == countSym + 3:
+        if (row == 0 or row == 2) and (col == 0 or col == countSym + 3):
             print('|', end='')
-        # if row == 1 and col == (countSym + 3) - countSym:
-        #     print(name, end='')
+        elif row == 1 and col == ((countSym + 4) - countSym) // 2:
+            for i in name:
+                print(i, end='')
+            print(' |', end='')
+        elif row == 1 and col == 0:
+            print('|', end='')
         elif row == 0 or row == 2:
             print('-', end='')
         else:
             print(' ', end='')
     print()
-print(countSym)

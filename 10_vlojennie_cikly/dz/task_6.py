@@ -1,18 +1,25 @@
 # Напишите программу, которая считает количество простых чисел в
 # заданной последовательности и выводит ответ на экран.
 countNum = int(input('Сколько будет чисел? '))
-count = 0
-#Список взят из Википедиии
-list_prime = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+countProst = 0
 
 while countNum > 0:
-    num = int(input('Вводи число от 1 до 100: '))
-    if num < 1 or num > 100:
-        print('Введенное число не верно!')
-        continue
-    for prime_num in list_prime:
-        if num == prime_num:
-            count += 1
+    noProst = False
+    num = int(input('Вводи число: '))
+    if num % 2 == 0 and num != 2:
+        noProst = True
+    else:
+        for i in range(3, num // 2):
+            if num % 1 == 0:
+                noProst = True
+                break
+            else:
+                noProst = False
+    if noProst:
+        print('Число не простое')
+    else:
+        print('Число простое')
+        countProst += 1
     countNum -= 1
 
-print(f'\nКоличество простых чисел - {count}')
+print(f'\nКоличество простых чисел - {countProst}')
