@@ -10,7 +10,7 @@ while countNum > 0:
         noProst = True
     else:
         for i in range(3, num // 2):
-            if num % 1 == 0:
+            if num % i == 0:
                 noProst = True
                 break
             else:

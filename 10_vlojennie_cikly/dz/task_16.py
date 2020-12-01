@@ -13,6 +13,8 @@ for row in range(num):
     for col in range(num * 2):
         if col == (num * 2 // 2) - row or col == (num * 2 // 2) + row:
             print('1', end='')
+        if row > 1 and (col == (num * 2 // 2) - row + 1 or col == (num * 2 // 2) + row -3):
+            print('3', end='')
         else:
             print(' ', end='')
     print()

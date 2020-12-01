@@ -11,9 +11,9 @@ size = int(input('Введите размер матрицы: '))
 
 for row in range(size):
     for col in range(size):
-        if row == col or col == size - 1 - row:
+        if row == col or row == size - 1 - col:
             print('1', end=' ')
-        elif row > 0:
+        elif row > col or row > size - 1 - col:
             print('2', end=' ')
         else:
             print('0', end=' ')
