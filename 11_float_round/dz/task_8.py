@@ -22,15 +22,19 @@
 # 50          122
 low_border = int(input('Нижняя граница: '))
 high_border = int(input('Верхняя граница: '))
-step = int(input('Шаг: '))
-# count = 0
 
-while low_border < high_border:
+while high_border < low_border:
     if low_border > high_border or high_border < low_border:
         print('Неверно выставлены нижняя и верхняя шраница температур! Повторите ввод!')
-        low_border = input('Нижняя граница: ')
-        high_border = input('Верхняя граница: ')
-        continue
-    else:
-        print(low_border, '\t', low_border * 1.8 + 32)
-        low_border += step
+        low_border = int(input('Нижняя граница: '))
+        high_border = int(input('Верхняя граница: '))
+
+step = int(input('Шаг: '))
+
+print('C\t F')
+
+while low_border < high_border:
+    print(low_border, '\t', (low_border * 1.8 + 32))
+    low_border += step
+
+print(high_border, '\t', int(high_border * 1.8 + 32))
