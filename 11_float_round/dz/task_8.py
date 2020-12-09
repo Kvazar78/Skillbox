@@ -36,5 +36,6 @@ print('C\t F')
 while low_border < high_border:
     print(low_border, '\t', (low_border * 1.8 + 32))
     low_border += step
-
-print(high_border, '\t', int(high_border * 1.8 + 32))
+    if low_border >= high_border:
+        low_border = high_border
+        print(low_border, '\t', (high_border * 1.8 + 32))

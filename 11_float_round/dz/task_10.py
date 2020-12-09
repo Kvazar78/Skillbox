@@ -19,14 +19,12 @@
 #
 # Введите угол тангажа в градусах: 724
 # Угол безопасен.
+import math
+
 angle = float(input('Введите угол тангажа в градусах: '))
 
-if angle > 360:
-    angle = (angle % 360) / 57.2956
-elif angle < (-360):
-    angle = (angle % (-360)) / 57.2956
-else:
-    angle /= 57.2956
+angle = (math.fabs(angle) % 360) / 57.2956
+
 # получаем угол в радианах
 print(angle)
 if angle < (-0.28) or angle > 0.28:

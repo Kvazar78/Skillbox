@@ -18,11 +18,8 @@
 # использовать проверку “если двоичный логарифм от K не равен K”.
 import math
 
-string = input('Введи сообщение: ')
-count_symbol = 0
+count_symbol = int(input('Введи длину сообщения: '))
 
-for i in string:
-    count_symbol += 1
 k = math.log2(count_symbol)
 if k - int(k) != 0:
     print(f'\nВведенное количество символов ({count_symbol}) не является степенью 2!')
