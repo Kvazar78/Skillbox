@@ -30,18 +30,67 @@
 #
 # mainMenu():
 def rock_paper_scissors():
+    gamer1 = input('Выбор 1 игрока: камень, ножницы, бумага? ')
+    gamer2 = input('Выбор 2 игрока: камень, ножницы, бумага? ')
+    draw = False
+    player1win = False
+    player2win = False
 
+    if gamer1 == gamer2:
+        draw = True
+    elif gamer1 == 'Камень':
+        if gamer2 == 'Ножницы':
+            print('Камень бьёт ножницы')
+            player1win = True
+        else:
+            print('Бумага кроет камень')
+            player2win = True
+    elif gamer1 == 'Ножницы':
+        if gamer2 == 'Камень':
+            print('Камень бьёт ножницы')
+            player2win = True
+        else:
+            print('Ножницы режут бумагу')
+            player1win = True
+    elif gamer1 == 'Бумага':
+        if gamer2 == 'Камень':
+            print('Бумага кроет камень')
+            player1win = True
+        else:
+            print('Ножницы режут бумагу')
+            player2win = True
+    else:
+        print('Что-то пошло не так, проверьте правильность ввода!')
+        rock_paper_scissors()
+    
+    if draw:
+        print('Ничья')
+    elif gamer1:
+        print(f'Выиграл 1 игрок')
+    else:
+        print(f'Выиграл 2 игрок')
+    
+    mainMenu()
     #Здесь будет игра "Камень, ножницы, бумага"
 
 
 def guess_the_number():
+    num = 54
+    player_num = int(input('Введи число: '))
 
+    while player_num != num:
+        if player_num > num:
+            print('\nПроскочил, давай меньше')
+        else:
+            print('\nНедолет, давай больше')
+        player_num = int(input('Подумай как следует перед выбором...: '))
+    print('Угадал!')
+    mainMenu()
     #Здесь будет игра "Угадай число"
-
 
 def mainMenu():
     print('Выберите игру:\nA - "Камень, ножницы, бумага"\nB - "Угадай число"')
-    sel = input('Сделай выбор')
+    sel = input('Сделай выбор: ')
     if sel == 'A':
         rock_paper_scissors()
     elif sel == 'B':
