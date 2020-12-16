@@ -28,7 +28,7 @@
 # Вы в спальне...
 def bedroom():
     print('\nВы в спальне. Куда идем?\n1 - в ванну\n2 - в коридор')
-    sel = input('? ')
+    sel = input('?')
     if sel == '1':
         bathroom()
     elif sel == '2':
@@ -57,14 +57,17 @@ def corridor():
         bathroom()
     elif sel == '3':
         kitchen()
-    elif sel == 4:
+    elif sel == '4':
         print('Маску одел?\n1 - да\n2 - нет')
         selMask = input('? ')
         if selMask == '1':
             print('Ты вышел на из квартиры. Конец.')
             mainMenu()
-        elif sel == '2':
+        elif selMask == '2':
             print('Тогда сиди дома!')
+            corridor()
+        else:
+            print('\nНеверный ввод!')
             corridor()
     else:
         print('\nНеверный ввод!')

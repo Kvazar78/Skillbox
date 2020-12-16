@@ -32,43 +32,39 @@
 def rock_paper_scissors():
     gamer1 = input('Выбор 1 игрока: камень, ножницы, бумага? ')
     gamer2 = input('Выбор 2 игрока: камень, ножницы, бумага? ')
-    draw = False
-    player1win = False
-    player2win = False
+    status = 0
 
     if gamer1 == gamer2:
-        draw = True
+        status = 0
     elif gamer1 == 'Камень':
         if gamer2 == 'Ножницы':
-            print('Камень бьёт ножницы')
-            player1win = True
+            print('\nКамень бьёт ножницы - ', end='')
+            status = 1
         else:
-            print('Бумага кроет камень')
-            player2win = True
+            print('\nБумага кроет камень - ', end='')
+            status = 2
     elif gamer1 == 'Ножницы':
         if gamer2 == 'Камень':
-            print('Камень бьёт ножницы')
-            player2win = True
+            print('\nКамень бьёт ножницы - ', end='')
+            status = 2
         else:
-            print('Ножницы режут бумагу')
-            player1win = True
+            print('\nНожницы режут бумагу - ', end='')
+            status = 1
     elif gamer1 == 'Бумага':
         if gamer2 == 'Камень':
-            print('Бумага кроет камень')
-            player1win = True
+            print('\nБумага кроет камень - ', end='')
+            status = 1
         else:
-            print('Ножницы режут бумагу')
-            player2win = True
+            print('\nНожницы режут бумагу - ', end='')
+            status = 2
     else:
-        print('Что-то пошло не так, проверьте правильность ввода!')
+        print('\nЧто-то пошло не так, проверьте правильность ввода!')
         rock_paper_scissors()
     
-    if draw:
-        print('Ничья')
-    elif gamer1:
-        print(f'Выиграл 1 игрок')
+    if status == 0:
+        print('\nНичья')
     else:
-        print(f'Выиграл 2 игрок')
+        print(f'Выиграл {status} игрок')
     
     mainMenu()
     #Здесь будет игра "Камень, ножницы, бумага"
@@ -89,11 +85,11 @@ def guess_the_number():
     #Здесь будет игра "Угадай число"
 
 def mainMenu():
-    print('Выберите игру:\nA - "Камень, ножницы, бумага"\nB - "Угадай число"')
-    sel = input('Сделай выбор: ')
-    if sel == 'A':
+    print('\nВыберите игру:\n1 - "Камень, ножницы, бумага"\n2 - "Угадай число"')
+    sel = int(input('Сделай выбор: '))
+    if sel == 1:
         rock_paper_scissors()
-    elif sel == 'B':
+    elif sel == 1:
         guess_the_number()
     else:
         print('Сделан не верный выбор (может с раскладкой что-то не так? Повторите')
