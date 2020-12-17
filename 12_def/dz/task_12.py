@@ -76,9 +76,9 @@ def guess_the_number():
 
     while player_num != num:
         if player_num > num:
-            print('\nПроскочил, давай меньше')
+            print('\nПроскочил, давай меньше...', end=' ')
         else:
-            print('\nНедолет, давай больше')
+            print('\nНедолет, давай больше...', end=' ')
         player_num = int(input('Подумай как следует перед выбором...: '))
     print('Угадал!')
     mainMenu()
@@ -89,7 +89,7 @@ def mainMenu():
     sel = int(input('Сделай выбор: '))
     if sel == 1:
         rock_paper_scissors()
-    elif sel == 1:
+    elif sel == 2:
         guess_the_number()
     else:
         print('Сделан не верный выбор (может с раскладкой что-то не так? Повторите')
