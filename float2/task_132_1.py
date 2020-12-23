@@ -13,13 +13,14 @@
 #
 # Сумма от 1 до 15 = 120
 def summ(number):
-    summ = 0
-    for i in range(1,number +1):
-        summ += i
-        return summ
+    summ_num = 0
+    for i in range(1, number + 1):
+        summ_num += i
+    return summ_num
+
 
 num = int(input('Введи число: '))
 a = summ(num)
+print(f'Сумма от 1 до {num} = {a}')
 b = summ(a)
-
-print(a + b)
+print(f'Сумма от 1 до {a} = {b}')
