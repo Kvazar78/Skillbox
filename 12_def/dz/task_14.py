@@ -22,19 +22,17 @@
 # Введите число: 4
 # Ответ: 42
 def function(number, string):
-
-    if number >= 3:
-        number //= 2
-        string += str(number)
-        if number > 5:
-            number -= 1
-            string += str(number)
-        function(number,string)
+    string += str(number)
+    num = number
+    while num > 3:
+        num //= 2
+        string += str(num)
+    if number >= 5:
+        number -= 1
+        function(number, string)
     else:
         print(f'Ответ: {string}')
 
 number = int(input('Введите число: '))
 string = ''
-
 function(number, string)
-
