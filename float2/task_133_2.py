@@ -22,17 +22,18 @@
 n = float(input('Введите число в эксп. форме: '))
 x = 1
 count = 0
-control = ''
+# string_n = ''
+#
+# for i in n:
+#     if i =='e':
+#         break
+#     string_n += i
 
-for i in str(n):
-    if i == 'e':
-        break
-    control += i
 
-if 1 > float(control) >= 9:
+if 0 > n or n > 9:
     print('Введена неверная мантисса!')
 else:
     while x < 2:
-        x +=  n
+        x +=  float(n)
         count += 1
     print(f'Кол-во прибавлений: {count}')
