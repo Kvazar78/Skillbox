@@ -20,21 +20,24 @@
 #
 # Приблизительная глубина безопасной кладки: 0.732421875 м
 alert = float(input('Введите максимально допустимый уровень опасности: '))
-left = 1e-15
-right = 4
-x = 2
+left = -4
+right = 0
+d = alert + 1
+
+# D = (x ** 3) - (3 * x ** 2) - 12 * x + 10
 count = 0
 
-while count < 100:
+for i in str(alert):
     count += 1
-    d = (x ** 3) - (3 * x ** 2) - 12 * x + 10
-    print(f' Иттерация - {count}, d = {d}')
-    if d > alert:
-        right = x - 1
-        x = (left + right) // 2
-    elif d < alert:
-        left = x + 1
-        x = (left + right) // 2
-    else:
-        print(f'Приблизительная глубина безопасной кладки: {x} м')
-print('ХЗ')
+    if i == '.':
+        count = 0
+
+while round(d, count) != alert:
+    x = (left + right) / 2
+    d = (abs(x) ** 3) - (3 * abs(x) ** 2) - 12 * abs(x) + 10
+    if d < alert:
+        left = x
+    elif d > alert:
+        right = x
+    
+print(f'\nПриблизительная глубина безопасной кладки: {x} м')
