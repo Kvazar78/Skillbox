@@ -13,16 +13,28 @@
 
 def degree_factor(n):
     factor = (-1)
-    for i in range(n + 1):
-        factor *= factor
-    return factor
+    degree = factor
+    if n == 0:
+        return (degree * (-1))
+    elif n == 1:
+        return degree
+    else:
+        for i in range(2, n + 1):
+            degree *= factor
+        return degree
+
 
 def numerator(x, n):
     n *= 2
-    degree = x
-    for i in range(n + 1):
-        degree *= x
-    return x
+    if n == 0:
+        return 1
+    elif n == 1:
+        return x
+    else:
+        degree = x
+        for i in range(2, n + 1):
+            degree *= x
+        return degree
 
 def denominator(n):
     factorial = 1
@@ -37,19 +49,15 @@ def denominator(n):
 
 x = int(input('Введите x: '))
 precision = float(input('Введите точность: '))
-precision_round = 0
-
-for i in str(precision):
-    precision_round += 1
-    if i == '.':
-        precision_round = 0
 
 n = 0
-summ = 0
-num = 1
+member = 1
+summ_row = 0
 
-while x > num:
-    # summ = ((-1) ** n) * (x ** (2 * n) / (2 * n)!)
-    summ = degree_factor(n) * (numerator(x, n) / )
+while abs(member) > precision:
+    # member = ((-1) ** n) * (x ** (2 * n) / (2 * n)!)
+    member = degree_factor(n) * (numerator(x, n) / denominator(2 * n))
+    summ_row += member
     n += 1
-    num += 1
+
+print(summ_row)
