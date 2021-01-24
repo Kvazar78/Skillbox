@@ -26,3 +26,4 @@ print('\nНужно приписать чисел:',len(sequence_reverse))
 print('Сами числа:', end=' ')
 for i in sequence_reverse:
     print(i, end=' ')
+jib,r
