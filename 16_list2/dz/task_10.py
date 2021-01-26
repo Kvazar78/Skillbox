@@ -35,8 +35,7 @@ else:
             break
         else:
             iter += 1
-
-print('\nНужно приписать чисел:', iter)
-print('Сами числа:', end=' ')
-for i in range((iter* (-1)), 0):
-    print(sequence_reverse[i], end=' ')
+    print('\nНужно приписать чисел:', iter)
+    print('Сами числа:', end=' ')
+    for i in range((iter* (-1)), 0):
+        print(sequence_reverse[i], end=' ')
