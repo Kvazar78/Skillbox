@@ -5,4 +5,5 @@
 # в противоположном порядке.
 string = input('Введи строку: ')
 
-print(string[string.index('h'):[len(string)-1, string.index('h'), -1])
+
+print(string[string.index('h')+1: -1-string[::-1].index('h')][::-1])
