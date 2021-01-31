@@ -12,10 +12,9 @@
 #
 # Список гласных букв: ['у', 'о', 'о', 'е', 'и', 'о', 'о', 'о', 'о']
 # Длина списка: 9
-vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
 strng = input('Введите текст: ')
 
-list_vowels = [sym for sym in strng if sym in vowels]
+list_vowels = [sym for sym in strng if sym in 'аеёиоуыэюя']
 
 print('\nСписок гласных букв:', list_vowels)
 print('Длина списка:', len(list_vowels))
