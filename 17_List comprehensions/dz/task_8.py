@@ -33,9 +33,19 @@ list_sticks = ['I' for _ in range(n)]
 
 for i_throw in range(k):
     print(f'\nБросок {i_throw + 1}.', end=' ')
-    throw = random.randint(1, 8)
-    list_sticks[throw-1:throw+2] = ['.', '.', '.']
-    print(f'Сбиты палки с номера {throw} по номер {throw + 2}')
+    throw = random.randint(0, n - 1)
+    if throw == 0:
+        left_range = 0
+        right_range = random.randint(throw, (n - 1))
+    elif throw == (n - 1):
+        right_range = n - 1
+        left_range = random.randint(0, throw)
+    else:
+        left_range = random.randint(0, throw)
+        right_range = random.randint(throw, (n - 1))
+    i = right_range - left_range
+    list_sticks[left_range:right_range] = ['.'] * i
+    print(f'Сбиты палки с номера {left_range + 1} по номер {right_range}')
 
 print('\nРезультат:', end=' ')
 for i in list_sticks:
