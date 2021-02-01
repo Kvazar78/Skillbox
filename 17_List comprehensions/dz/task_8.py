@@ -25,5 +25,18 @@
 # по номер 6
 #
 # Результат: I.....I...
+import random
+
 n = int(input('Кол-во палок: '))
 k = int(input('Кол-во бросков: '))
+list_sticks = ['I' for _ in range(n)]
+
+for i_throw in range(k):
+    print(f'\nБросок {i_throw + 1}.', end=' ')
+    throw = random.randint(1, 8)
+    list_sticks[throw-1:throw+2] = ['.', '.', '.']
+    print(f'Сбиты палки с номера {throw} по номер {throw + 2}')
+
+print('\nРезультат:', end=' ')
+for i in list_sticks:
+    print(i, end='')
