@@ -37,9 +37,20 @@ def point_transfer(word):
     return word1
 
 
-def permutation_of_symbols(sentence):
+def permutation_of_symbols(sentence, shift):
     list_sentence = sentence.split(' ')
-    for word in list_sentence:
+    list_sentence = [list_sentence[i] for i in range(len(list_sentence)) if list_sentence[i] != '']
+    word1 = ''
+    for i in range(len(list_sentence)):
+        # if list_sentence[i] != '':
+        word = list_sentence[i]
+        step = shift % len(word) * -1
+        word1 += word[step:] + word[:step]
+        if i == 0:
+            word1 = word1.title()
+        list_sentence[i] = word1
+        word1 = ''
+    return ' '.join(list_sentence)
 
 
 list_abc = list('abcdefghijklmnopqrstuvwxyz')
@@ -62,9 +73,19 @@ text = 'vujgvmCfb tj ufscfu ouib z/vhm ' \
        'gJ ifu nfoubujpojnqmf tj eibs pu mbjo-fyq tju( b bec /jefb ' \
        'Jg fui foubujpojnqmfn jt fbtz up bjo-fyqm ju znb cf b hppe jefb/ ' \
        'bnftqbdftO bsf pof ipoljoh sfbuh efbj .. fu(tm pe psfn gp tf"uip'
+# text = 'vujgvmCfb tj ufscfu ouib z/vhm '
+
 text_list = text.split(' ')
 
 new_textList = [encryption(list_abc, word) for word in text_list]
 new_textList = ' '.join([point_transfer(word) if '.' in word else word for word in new_textList]).split('.')
-
 print(new_textList)
+
+shift = 3
+
+for sentence in new_textList:
+    sentence = permutation_of_symbols(sentence, shift)
+    print(sentence)
+    shift += 1
+
+# print(new_textList)
