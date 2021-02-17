@@ -32,22 +32,12 @@ def reversal(word):
             symword = ''
     if flag:
         znak += symword[::-1]
-
     return znak
 
 
 string = input('Сообщение: ').split(' ')
 
 string = ' '.join([reversal(word) for word in string])
-# word_rev = ''
-# new_string = ''
-#
-# for sym in string:
-#     if sym.isalpha():
-#         word_rev += sym
-#     else:
-#         new_string += word_rev[::-1] + sym
-#         word_rev = ''
 
 print(string)
 
