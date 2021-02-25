@@ -31,7 +31,7 @@ pr1 = ''
 for item in pr:
     for sym in item:
         if sym == '(':
-            pr1 += parentheses(item)
+            pr1 += item[1:]
         else:
             pr1 += sym
     item = pr1
