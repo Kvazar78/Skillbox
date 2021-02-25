@@ -43,6 +43,22 @@ family_member['name'] = 'Jane'
 family_member['surname'] = 'Doe'
 family_member['hobbies'] = ['running', 'sky diving', 'singing']
 family_member['age'] = 35
-family_member['children'] = []
+family_member['children'] = [
+    {
+        'name': 'Alice',
+        'age': 6
+    },
+    {
+        'name': 'Bob',
+        'age': 8
+    }
+]
+name = input('Введи имя ребенка: ')
+
+for i_child in family_member.get('children'):
+    if i_child['name'] == name:
+        print('Такое имя есть')
+    else:
+        print('Такого имени нет')
 
 print(family_member)
