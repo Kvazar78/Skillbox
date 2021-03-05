@@ -52,6 +52,8 @@ text = input('Введите текст: ').lower()
 
 histogram = hist(text)
 
+print(histogram)
+
 for i_sym in sorted(histogram.keys()):
     print(i_sym, ':', histogram[i_sym])
 

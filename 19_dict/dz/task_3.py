@@ -57,5 +57,15 @@ data = {
 #     Внутри “fst_token_info” значение ключа “name” поменять с “fdf” на “doge”.
 #     Удалить “total_out” из tokens и присвоить его значение в “total_out” внутри “ETH”.
 #     Внутри "sec_token_info" изменить название ключа “price” на “total_price”.
+for i_key in data.keys():
+    print(f'Значения ключа {i_key}:')
+    if i_key == 'tokens':
+        print('\t\t[')
+        for i in data[i_key]:
+            print('\t\t', i, sep='')
+        print('\t\t]')
+    else:
+        print('\t\t', data[i_key])
 
-
+data['ETH']['total_diff'] = 100
+print(data['ETH'])
