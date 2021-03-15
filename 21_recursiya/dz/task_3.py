@@ -12,15 +12,14 @@
 # Пример 2:
 # Введите позицию числа в ряде Фибоначчи: 10
 # Число: 55
-def fib_pos(num_pos, n , count):
-    if count != num_pos:
-        n = (n - 1) + n
-        count += 1
-        fib_pos(num_pos, n, count)
-    return n
+def fib_pos(num_pos):
+    if num_pos == 1:
+        return 0
+    elif num_pos == 2:
+        return 1
+
+    return fib_pos(num_pos -1) + fib_pos(num_pos-2)
 
 
-n = 2
-count = 3
 num_pos = int(input('Введите позицию числа в ряде Фибоначчи: '))
-print('Число:', fib_pos(num_pos, n, count))
+print('Число:', fib_pos(num_pos))
