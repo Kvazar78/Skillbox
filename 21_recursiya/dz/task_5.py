@@ -11,9 +11,16 @@
 def calculating_math_func(data, dict_fact={}):
     if data in dict_fact:
         result = dict_fact[data]
+        print(data, 'есть в словаре :)')
     else:
+        start = 1
         result = 1
-        for index in range(1, data + 1):
+        if len(dict_fact) != 0:
+            result = max(dict_fact)
+            print('используем максимальное значение в словаре', result)
+            start = max(dict_fact) + 1
+            print('старт расчета факториала продолжаем с', start)
+        for index in range(start, data + 1):
             result *= index
             dict_fact[index] = result
     result /= data ** 3
@@ -37,7 +44,8 @@ def calculating_math_func(data, dict_fact={}):
 #     return result
 
 dict_fact = {}
-num = int(input('Введи число: '))
+for _ in range(3):
+    num = int(input('Введи число: '))
 
-print('Ответ:', calculating_math_func(num, dict_fact))
-print(dict_fact)
+    print('Ответ:', calculating_math_func(num, dict_fact))
+    print(dict_fact)
