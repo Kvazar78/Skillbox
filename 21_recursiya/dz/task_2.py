@@ -5,21 +5,27 @@
 #
 # Напишите функцию, которая будет полным аналогом функции zip, и сделайте так, чтобы программа работала с любыми
 #  итерируемыми типами данных. Циклами и условными операторами (как и функцией isinstance или type) пользоваться нельзя.
-def zipped2(iter1, iter2, len_iter):
-    if len_iter != -1:
-        new_list.append((iter1[len_iter], iter2[len_iter]))
-        zipped2(iter1, iter2, len_iter - 1)
-    return new_list
+# def zipped2(*args, len_zip):
+#     list_index = [i for i in range(len_zip)]
+#     zip_list = list(map(args))
+#     # zip_list = [(iter1[i], iter2[i])for i in range(len_zip)]
+#     return zip_list
+#
+# a = (1, 2, 3, 4, 5, 6)
+# b = 'привет'
+# c = {1: 's', 2: 'q', 3: 4}
+#
+#
+# len_zip = min(len(a), len(b), len(c))
+# print(len_zip)
+# print(zipped2(a, b, c, len_zip=len_zip))
+def zip2(*args):
+    return (args)
 
 
-iter_obj1 = (1, 2, 3, 4, 5, 6)
-iter_obj2 = 'привет'
-new_list = []
+a = (1, 2, 3, 4, 5, 6)
+b = 'привет'
+c = {1: 's', 2: 'q', 4: 4}
 
-if len(iter_obj1) > len(iter_obj2):
-    len_zip = len(iter_obj2) - 1
-else:
-    len_zip = len(iter_obj1) - 1
-
-print(zipped2(iter_obj1, iter_obj2, len_zip))
-
+list_tmp = list(map(zip2, a, b, c))
+print(list_tmp)
