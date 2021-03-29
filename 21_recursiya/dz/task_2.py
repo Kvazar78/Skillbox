@@ -20,12 +20,15 @@
 # print(len_zip)
 # print(zipped2(a, b, c, len_zip=len_zip))
 def zip2(*args):
-    return (args)
+    list_tmp = list(map(list, args))
+    len_index = min([len(x) for x in list_tmp])
+    list_tmp2 = [(i_iter[i]) for i in range(len_index) for i_iter in list_tmp]
+
+    return list_tmp2
 
 
 a = (1, 2, 3, 4, 5, 6)
 b = 'привет'
 c = {1: 's', 2: 'q', 4: 4}
 
-list_tmp = list(map(zip2, a, b, c))
-print(list_tmp)
+print(zip2(a, b, c))
