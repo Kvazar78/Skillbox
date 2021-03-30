@@ -27,8 +27,20 @@ def zip2(*args):
     return list_tmp2
 
 
+def zip1(*args):
+    list_tmp = list(map(list, args))
+    len_index = min([len(x) for x in list_tmp])
+    list_tmp2 = [(i_iter[i]) for i in range(len_index) for i_iter in list_tmp]
+    list_zip = [(list_tmp2[i], list_tmp2[i + 1], list_tmp2[i + 2]) for i in range(0, len_index * len(args), len(args))]
+
+    return list_zip
+
+
 a = (1, 2, 3, 4, 5, 6)
 b = 'привет'
 c = {1: 's', 2: 'q', 4: 4}
 
-print(zip2(a, b, c))
+print(zip1(a, b, c))
+# list_zip = zip1(a, b, c)
+# for i in list_zip:
+#     print(i)
