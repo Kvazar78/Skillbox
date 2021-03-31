@@ -1,3 +1,7 @@
+from copy import deepcopy
+import pprint
+
+
 def find_key(site, model):
     for sub_key in site.values():
         if 'title' in sub_key:
@@ -7,6 +11,7 @@ def find_key(site, model):
         if isinstance(sub_key, dict):
             find_key(sub_key, model)
     return site
+
 
 site_template = {
     'html': {
@@ -23,18 +28,11 @@ site_template = {
 
 value = int(input('Сколько требуется сайтов? '))
 site = {}
+pp = pprint.PrettyPrinter(width=100, indent=4)
 
 for _ in range(value):
     model = input('Введите модель телефона: ')
-    site[model] = site_template.copy()
+    site[model] = deepcopy(site_template)
     site[model] = find_key(site[model], model)
     print(f'Сайт для {model}')
-    print(site)
-
-
-# for i_elem in site_template.values():
-#     print(f"'{i_elem}': {{")
-#     if isinstance(site_template[i_elem], dict):
-#         for j_elem in i_elem:
-#             print(f"\t{j_elem}")
-#
+    pp.pprint(site)
