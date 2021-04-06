@@ -36,11 +36,16 @@ def zip1(*args):
     return list_zip
 
 
+def zip3(*args):
+    list_tmp = list(map(list, args))
+    list_zip = [(args[i]) for i in range(min([len(x) for x in list_tmp])) for item in list(map(list, args))]
+    return list_zip
+
 a = (1, 2, 3, 4, 5, 6)
 b = 'привет'
 c = {1: 's', 2: 'q', 4: 4}
 
-print(zip1(a, b, c))
+print(zip3(a, b, c))
 # list_zip = zip1(a, b, c)
 # for i in list_zip:
 #     print(i)
