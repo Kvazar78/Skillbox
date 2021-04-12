@@ -1,0 +1,3 @@
+Василий test@test.ru 27
+Egor test1@rr,ru 30
+Ivan ivan@rr.ru 450
