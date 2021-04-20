@@ -91,4 +91,5 @@ class Safe:
 
 
 person = Human('Vasya')
-birysa = Refrigerator()
+# birysa = Refrigerator()
+print(person.holod.food())
