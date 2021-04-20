@@ -19,7 +19,7 @@ class Sortedstudent:
     def sorted_lst(self):
         no_sorted_dict = {i_item.name: i_item.average_score for i_item in self.lst_stud}
         sorted_key = sorted(no_sorted_dict, key=no_sorted_dict.get)
-        sorted_list = [i_name for i_name in {i_key:no_sorted_dict[i_key] for i_key in sorted_key}]
+        sorted_list = [i_name for i_name in {i_key: no_sorted_dict[i_key] for i_key in sorted_key}]
         return sorted_list
 
 
