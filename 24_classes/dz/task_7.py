@@ -33,6 +33,8 @@
 # Реализуйте такую программу и создайте двух людей, живущих в одном доме. Проверьте работу программы несколько раз.
 #
 # Надеемся, эти люди живы...
+
+
 class Human:
 
     def __init__(self, name, satiety=50):
@@ -41,6 +43,8 @@ class Human:
         self.holod = Refrigerator()
         self.safe = Safe()
 
+    def action(self):
+        fortune = ra
     def status(self):
         if self.safe.money < 50:
             print(f'Денег {self.safe.money} - придется топать на работу!')

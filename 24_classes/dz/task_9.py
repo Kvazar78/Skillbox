@@ -33,7 +33,6 @@ pole1 = Pole()
 
 pole1.print_pole()
 
-first_player = choice(Player('Vasya', 'X'), )
 
 print(first_player)
 # for _ in range(4):
