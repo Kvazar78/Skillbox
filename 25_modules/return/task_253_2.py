@@ -20,4 +20,59 @@ class Robot:
         return self.__model
 
     def operate(self):
-        print(f'')
+        pass
+
+
+class HooverBot(Robot):
+    __garbage_bag = 0
+
+    def __init__(self, model):
+        super().__init__(model)
+
+    def operate(self):
+        self.set_garbage_load()
+        print(f'Робот {self.get_model()} начал пылесосить. Емкость заполнена на {self.get_garbage_bag()}...')
+
+    def set_garbage_load(self):
+        self.__garbage_bag += 1
+
+    def get_garbage_bag(self):
+        return self.__garbage_bag
+
+
+class WarBot(Robot):
+
+    def __init__(self, model, weapon):
+        super().__init__(model)
+        self.weapon = weapon
+
+    def operate(self):
+        print(f'Робот {self.get_model()} приступил к охране объекта используя {self.weapon}')
+
+
+class SubmarineBot(Robot):
+    __depth = 0
+
+    def __init__(self, model, weapon):
+        super().__init__(model)
+        self.weapon = weapon
+
+    def set_depth(self, value):
+        self.__depth -= value
+
+    def get_depth(self):
+        return self.__depth
+
+    def operate(self):
+        self.set_depth(15)
+        print(f'Робот {self.get_model()} приступил к охране объекта используя {self.weapon} на глубине {self.get_depth()}')
+
+
+hb1 = HooverBot('Prilips')
+wb1 = WarBot('r2d2', 'vulcan')
+sb1 = SubmarineBot('YellowSubmarine', 'torpedos')
+
+hb1.operate()
+wb1.operate()
+sb1.operate()
+hb1.operate()
