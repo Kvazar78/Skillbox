@@ -14,3 +14,20 @@
 # Если первое число меньше второго, то программа выдаёт исключение DivisionError (нельзя делить большее на меньшее).
 #
 # Дополнительно, с помощью try except, можно обработать исключение на своё усмотрение.
+from random import randint
+
+
+class MyException(Exception):
+    pass
+
+
+def check(string):
+    string_lst = string.split()
+    try:
+
+
+with open('numbers.txt', 'a') as file_to_write:
+    for _ in range(5):
+        string = str(randint(0, 101)) + ' ' + str(randint(0, 101)) + '\n'
+        file_to_write.write(string)
+
