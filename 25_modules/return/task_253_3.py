@@ -23,11 +23,19 @@ class MyException(Exception):
 
 def check(string):
     string_lst = string.split()
-    try:
+    if string_lst[0] < string_lst[1]:
+        raise MyException(f'{string_lst[0]} меньше {string_lst[1]} - делить не будем')
+    else:
+        print(string_lst[0] / string_lst[1])
 
 
 with open('numbers.txt', 'a') as file_to_write:
     for _ in range(5):
         string = str(randint(0, 101)) + ' ' + str(randint(0, 101)) + '\n'
         file_to_write.write(string)
+
+with open('numbers.txt', 'r') as file_to_read:
+    for i_line in file_to_read:
+        print('обрабатывается строка:', i_line)
+        check(i_line)
 
