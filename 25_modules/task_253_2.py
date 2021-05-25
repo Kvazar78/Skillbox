@@ -16,6 +16,9 @@ class Robot:
     def __init__(self, model):
         self.model = model
 
+    def operate(self):
+        pass
+
 
 class HooverRobot(Robot):
 
@@ -40,10 +43,20 @@ class WarRobot(Robot):
 
 class SubmarineRobot(Robot):
 
-    def __init__(self, model, weapon, depth):
+    def __init__(self, model, weapon, depth=0):
         super().__init__(model)
         self.weapon = weapon
         self.depth = depth
 
     def operate(self):
+        self.depth += 10
         print(f'Робот {self.model} приступил к охране объекта с помощью {self.weapon} на глубине {self.depth}')
+
+
+bot1 = HooverRobot('Xiomi')
+bot2 = WarRobot('r2d2', 'лазер')
+bot3 = SubmarineRobot('Акула', 'торпеды')
+
+bot1.operate()
+bot2.operate()
+bot3.operate()
