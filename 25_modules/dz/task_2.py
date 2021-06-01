@@ -18,21 +18,21 @@ import random
 
 class KillError(Exception):
 
-    def __str__(self):
+    def __repr__(self):
         return 'Ой убили...'
     # pass
 
 
 class DrunkError(Exception):
 
-    def __str__(self):
+    def __repr__(self):
         return 'Ой... напился...'
     # pass
 
 
 class CarCrashError(Exception):
 
-    def __str__(self):
+    def __repr__(self):
         return 'Упс... авария'
 
     # pass
@@ -40,14 +40,14 @@ class CarCrashError(Exception):
 
 class GluttonyError(Exception):
 
-    def __str__(self):
+    def __repr__(self):
         return 'Нажрался...'
     # pass
 
 
 class DepressionError(Exception):
 
-    def __str__(self):
+    def __repr__(self):
         return 'Плохо мне... плохо...'
     # pass
 
@@ -56,7 +56,7 @@ def one_day(except_list):
     fortuna = random.randint(1, 10)
     if fortuna == 10:
         with open('karma.log', 'a') as karma_log:
-            string = str(random.choice(except_list)) + '\n'
+            string = repr(random.choice(except_list)) + '\n'
             karma_log.write(string)
         return 0
     else:

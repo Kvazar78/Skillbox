@@ -165,7 +165,6 @@ class Residents:
     # def eat_for_all(self, value):
 
 
-
 class People(Residents):
     '''
     Базовый класс людей. Родитель: Residents
@@ -236,9 +235,19 @@ class Wife(People):
         super().__init__(name, house)
 
     def buy_food(self):
-        if self.house.get_food < 50
         self.set_satiety(-10)
-        pass
+        if self.house.get_food < 50:
+            print('Еды в доме мало - надо сходить в магаз!')
+            if self.house.get_money() > 50:
+                self.house.set_money(-50)
+                self.house.set_food(50)
+                print(f'Куплено 50 еды, сейчас дома {self.house.get_food} еды.')
+        else:
+            print(f'Дома мало денег - {self.house.get_money}, отправляем мужа на работу')
+            Husband.go_to_work()
+
+
+
 
     def buy_coat(self):
         self.set_satiety(-10)
