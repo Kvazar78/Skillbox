@@ -23,3 +23,9 @@ hist = {
 
 rev_histogram = revers(hist)
 print(rev_histogram)
+
+for i_key, i_elem in rev_histogram.items():
+    print(f'{i_key}:', end=' ')
+    for i in i_elem:
+        print(f'{i}', end=', ')
+    print()

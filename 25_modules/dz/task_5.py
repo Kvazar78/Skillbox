@@ -46,8 +46,6 @@ class Transport:
 
     def move(self, distance):
         print(f'\nЕдем вперед на расстояние {distance}...')
-        # x = distance * math.cos(self.get_angle())
-        # y = distance * math.sin(self.get_angle())
         self.set_x(distance * math.cos(self.get_angle()))
         self.set_y(distance * math.sin(self.get_angle()))
 
